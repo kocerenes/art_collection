@@ -2,7 +2,7 @@ package com.example.artcollection.data.local
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.artcollection.data.model.Art
+import com.example.artcollection.data.local.model.Art
 
 @Dao
 interface ArtDAO {
