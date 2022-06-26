@@ -26,6 +26,9 @@ class ArtsFragment : Fragment(R.layout.fragment_arts) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.fabAdd.setOnClickListener {
+            findNavController().navigate(ArtsFragmentDirections.actionArtsFragmentToArtDetailsFragment())
+        }
 
     }
 
