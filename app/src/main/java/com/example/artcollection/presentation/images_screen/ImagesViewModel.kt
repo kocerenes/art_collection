@@ -7,9 +7,11 @@ import androidx.lifecycle.viewModelScope
 import com.example.artcollection.data.remote.ArtRepository
 import com.example.artcollection.data.remote.model.ImageResponse
 import com.example.artcollection.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class ImagesViewModel @Inject constructor(
     private val repository: ArtRepository
 ): ViewModel() {

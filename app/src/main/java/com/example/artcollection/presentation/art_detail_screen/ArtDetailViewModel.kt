@@ -7,10 +7,15 @@ import androidx.lifecycle.viewModelScope
 import com.example.artcollection.data.local.model.Art
 import com.example.artcollection.data.remote.ArtRepository
 import com.example.artcollection.utils.Resource
+import com.example.artcollection.utils.selectedImageUrl
+import com.example.artcollection.utils.setSelectedImage
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.lang.Exception
 import javax.inject.Inject
 
+
+@HiltViewModel
 class ArtDetailViewModel @Inject constructor(
     private val repository: ArtRepository
 ): ViewModel() {
@@ -19,13 +24,13 @@ class ArtDetailViewModel @Inject constructor(
     val insertArtMessage : LiveData<Resource<Art>>
         get() = insertArtMsg
 
-    private val selectedImage = MutableLiveData<String>()
+    /*private val selectedImage = MutableLiveData<String>()
     val selectedImageUrl : LiveData<String>
         get() = selectedImage
 
-    public fun setSelectedImage(url: String){
+    fun setSelectedImage(url: String){
         selectedImage.postValue(url)
-    }
+    }*/
 
     fun resetInsertArtMsg(){
         insertArtMsg = MutableLiveData<Resource<Art>>()
@@ -49,7 +54,7 @@ class ArtDetailViewModel @Inject constructor(
         }
 
         // todo =  imageurl selectedImage.value olarak çekilecek
-        val art= Art(name,artistName,yearInt,selectedImage.value ?: "")
+        val art= Art(name,artistName,yearInt, selectedImageUrl.value ?: "")
         insertArt(art)
         setSelectedImage("")
         //setSelectedImage("")

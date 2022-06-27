@@ -52,7 +52,7 @@ class ImageRecyclerAdapter @Inject constructor(
         holder.itemView.apply {
             glide.load(url).into(imageView)
 
-            setOnItemClickListener {
+            setOnClickListener {
                 onItemClickListener?.let {
                     it(url)
                 }
@@ -62,7 +62,7 @@ class ImageRecyclerAdapter @Inject constructor(
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return images.size
     }
 
 }
