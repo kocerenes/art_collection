@@ -2,8 +2,13 @@ package com.example.artcollection.di
 
 import android.content.Context
 import androidx.room.Room
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.example.artcollection.R
+import com.example.artcollection.data.local.ArtDAO
 import com.example.artcollection.data.local.ArtDatabase
 import com.example.artcollection.data.remote.ApiFactory
+import com.example.artcollection.data.repository.ArtRepository
 import com.example.artcollection.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -56,5 +61,19 @@ object AppModule {
     ): ApiFactory{
         return retrofit.create(ApiFactory::class.java)
     }
+
+    @Singleton
+    @Provides
+    fun provideGlide(@ApplicationContext context: Context) = Glide.with(context)
+        .setDefaultRequestOptions(
+            RequestOptions().placeholder(R.drawable.ic_launcher_background)
+                .error(R.drawable.ic_launcher_background)
+        )
+
+    @Singleton
+    @Provides
+    fun provideNormalRepo(dao: ArtDAO,api: ApiFactory) = ArtRepository(dao,api) as com.example.artcollection.data.remote.ArtRepository
+
+
 
 }
