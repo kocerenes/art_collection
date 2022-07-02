@@ -82,6 +82,10 @@ dependencies {
     testImplementation "androidx.arch.core:core-testing:2.1.0"
     testImplementation "com.google.truth:truth:1.0.1"
 
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.2.1"
+    androidTestImplementation "com.google.truth:truth:1.0.1"
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+
     /*implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
