@@ -19,7 +19,7 @@ Libraries Used
   * [Fragment][34] - A basic unit of composable UI.
   * [Layout][35] - Lay out widgets using different algorithms.
   
-*[Jetpack Libraries][36] - Jetpack is a suite of libraries to help developers follow best practices, reduce boilerplate code, and write code that works consistently across Android versions and devices so that developers can focus on the code they care about.
+* [Jetpack Libraries][36] - Jetpack is a suite of libraries to help developers follow best practices, reduce boilerplate code, and write code that works consistently across Android versions and devices so that developers can focus on the code they care about.
   * [Dagger-Hilt][93] - Hilt is the recommended solution for [dependency injection][21] in Android apps, and works seamlessly with Compose.
   * [Room][37] - The Room persistence library provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite.
   
